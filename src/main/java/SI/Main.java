@@ -12,20 +12,20 @@ public class Main {
 		System.out.println("Press 2 to serach for a dog");
 		int choice = scan.nextInt();
 		InsertData obj1 = new InsertData();
+		Getdetails obj2 = new Getdetails();
 		switch (choice) {
 		case 1: {
-			 obj1.data();
+			obj1.data();
 			break;
 		}
 		case 2: {
-			// obj1.Register();
+			obj2.getdetails();
 			break;
 		}
 		default: {
 			System.out.println("Invalid input");
 		}
-
 		}
-
+		scan.close();
 	}
 }
