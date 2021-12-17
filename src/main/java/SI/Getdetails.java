@@ -7,8 +7,9 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class Getdetails {
-	void getdetails() {
+	int getdetails() {
 		Scanner scan = new Scanner(System.in);
+		int i = 0;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/si", "root", "Khanna5301");
@@ -18,7 +19,6 @@ public class Getdetails {
 			int id = scan.nextInt();
 			System.out.println();
 			ResultSet rs = smt.executeQuery("SELECT * FROM Dog where unique_id=384");
-			int i = 0;
 			while (rs.next()) {
 				System.out.println("Details are: ");
 				int EId = rs.getInt(1);
@@ -49,5 +49,6 @@ public class Getdetails {
 			e.printStackTrace();
 		}
 		scan.close();
+		return i;
 	}
 }
