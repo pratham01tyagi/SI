@@ -2,8 +2,8 @@ package SI;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.Scanner;
 
 public class Getdetails {
@@ -13,12 +13,13 @@ public class Getdetails {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/si", "root", "Khanna5301");
-			Statement smt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 			System.out.println();
 			System.out.println("Enter the unique id of dog: ");
 			int id = scan.nextInt();
 			System.out.println();
-			ResultSet rs = smt.executeQuery("SELECT * FROM Dog where unique_id=384");
+			PreparedStatement stmt = con.prepareStatement("select * from Dog where unique_id=?");
+			stmt.setInt(1, id);
+			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				System.out.println("Details are: ");
 				int EId = rs.getInt(1);
