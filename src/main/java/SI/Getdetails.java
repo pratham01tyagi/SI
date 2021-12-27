@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.util.Scanner;
 
 public class Getdetails {
-	int getdetails() {
+	void getdetails() {
 		Scanner scan = new Scanner(System.in);
 		int i = 0;
 		try {
@@ -46,10 +46,11 @@ public class Getdetails {
 				System.out.println("Details Not Found... ");
 			}
 			rs.close();
+			con.close();
+			stmt.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		scan.close();
-		return i;
 	}
 }

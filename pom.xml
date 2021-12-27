@@ -25,4 +25,18 @@
 		</dependency>
 
 	</dependencies>
+	<repositories>
+	<repository>
+	<id>SI</id>
+	<name>Releases</name>
+	<url>hhttp://localhost:8081/repository/releases/</url>
+	</repository>
+</repositories>
+<distributionManagement>
+  <snapshotRepository>
+    <id>SI</id>
+    <name>SI</name>
+    <url>http://localhost:8081/repository/SI/</url>
+  </snapshotRepository>
+</distributionManagement>
 </project>

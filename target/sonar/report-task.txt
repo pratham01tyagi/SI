@@ -2,5 +2,5 @@ projectKey=SocialInternship:SocialInternship
 serverUrl=http://localhost:9002
 serverVersion=7.7.0.23042
 dashboardUrl=http://localhost:9002/dashboard?id=SocialInternship%3ASocialInternship
-ceTaskId=AX3HDFAefrJyJG76pa1G
-ceTaskUrl=http://localhost:9002/api/ce/task?id=AX3HDFAefrJyJG76pa1G
+ceTaskId=AX33io0mKBTN0n_tR8pg
+ceTaskUrl=http://localhost:9002/api/ce/task?id=AX33io0mKBTN0n_tR8pg
