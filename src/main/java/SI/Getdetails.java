@@ -17,12 +17,12 @@ public class Getdetails {
 			System.out.println("Enter the unique id of dog: ");
 			int id = scan.nextInt();
 			System.out.println();
-			PreparedStatement stmt = con.prepareStatement("select * from Dog where unique_id=?");
-			stmt.setInt(1, id);
-			ResultSet rs = stmt.executeQuery();
-			while (rs.next()) {
+			PreparedStatement stmt = con.prepareStatement("select * from Dog where unique_id=?");    //
+			stmt.setInt(1, id);           //
+			ResultSet rs = stmt.executeQuery();  //
+			while (rs.next()) {     //
 				System.out.println("Details are: ");
-				int EId = rs.getInt(1);
+				int EId = rs.getInt(1);   //
 				String EName = rs.getString(2);
 				String location = rs.getString(3);
 				String EPhone = rs.getString(4);
