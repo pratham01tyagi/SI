@@ -1,19 +1,19 @@
 package SI;
 
-import java.io.BufferedReader;
+import java.io.BufferedReader;    //
 import java.io.InputStreamReader;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+import java.sql.DriverManager;     //
+import java.sql.PreparedStatement;   //
 
 public class InsertData {
 	void data() {
-		try {
+		try {  //
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/si", "root", "Khanna5301");
-			String g = "insert into Dog( unique_id, NameofPerson, Location, MobileNo, CITY, PINCODE, STATE, Dogcolour, DogBreed) values( ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-			PreparedStatement ptsmt = con.prepareStatement(g);
-			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			String g = "insert into Dog( unique_id, NameofPerson, Location, MobileNo, CITY, PINCODE, STATE, Dogcolour, DogBreed) values( ?, ?, ?, ?, ?, ?, ?, ?, ?)"; //
+			PreparedStatement ptsmt = con.prepareStatement(g);   //
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));   //
 			System.out.println();
 			int a = 1, b = 400;
 			int unique_id = (int) (Math.random() * (b - a + 1) + a);
@@ -43,14 +43,14 @@ public class InsertData {
 			ptsmt.setString(7, STATE);
 			ptsmt.setString(8, Dogcolour);
 			ptsmt.setString(9, DogBreed);
-			ptsmt.executeUpdate();
+			ptsmt.executeUpdate();       //
 			System.out.println();
 			System.out.println("Inserted Successfully...");
 			System.out.println();
 			System.out.println("Unique id for the dog is: " + unique_id);
-			con.close();
-		} catch (Exception e) {
-			e.printStackTrace();
+			con.close();    //
+		} catch (Exception e) {   //
+			e.printStackTrace();  //
 		}
 	}
 
